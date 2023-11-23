@@ -3,19 +3,15 @@ package org.alex.videojuegos.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.alex.videojuegos.domain.Distribuidor;
 
 @Setter
 @Getter
 @Entity
-@Table(name = "videojuego")
-public class Videojuego {
+@Table(name = "distribuidor")
+public class Distribuidor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    private String description;
-    private String imageUrl;
-    @ManyToOne
-    private Distribuidor distribuidor;
+    private String website;
 }
