@@ -13,5 +13,5 @@ public class Distribuidor {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    private String website;
+    private String website_url;
 }
