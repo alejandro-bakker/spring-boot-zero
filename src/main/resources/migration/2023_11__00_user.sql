@@ -1,4 +1,5 @@
 CREATE USER 'db_user_videojuegos'@'%';
+
 GRANT Alter ON videojuegos.videojuego TO 'db_user_videojuegos'@'%';
 GRANT Create ON videojuegos.videojuego TO 'db_user_videojuegos'@'%';
 GRANT Create view ON videojuegos.videojuego TO 'db_user_videojuegos'@'%';
@@ -13,3 +14,18 @@ GRANT Show view ON videojuegos.videojuego TO 'db_user_videojuegos'@'%';
 GRANT Trigger ON videojuegos.videojuego TO 'db_user_videojuegos'@'%';
 GRANT Update ON videojuegos.videojuego TO 'db_user_videojuegos'@'%';
 ALTER USER 'db_user_videojuegos'@'%' IDENTIFIED BY '2wdt20d#L4^vMq';
+
+GRANT Alter ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Create ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Create view ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Delete ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Delete history ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Drop ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Grant option ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Index ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Insert ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT References ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Select ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Show view ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Trigger ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
+GRANT Update ON videojuegos.distribuidor TO 'db_user_videojuegos'@'%';
