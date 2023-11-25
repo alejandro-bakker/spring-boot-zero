@@ -24,7 +24,7 @@ public class ListadoController {
         // List<Videojuego> destacados = videojuegoService.buscarDestacados();
 
         // Dynamic list
-        List<Videojuego> destacados = videojuegoService.buscarDestacadosDesdeLaBaseDeDatos();
+        List<Videojuego> destacados = videojuegoService.buscarDestacadosDesdeLaBaseDeDatosConJPQL();
 
         model.addAttribute("videojuegosDestacados", destacados);
         return "listado";

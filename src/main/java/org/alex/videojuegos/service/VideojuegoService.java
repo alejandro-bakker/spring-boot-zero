@@ -20,6 +20,10 @@ public class VideojuegoService {
         return videojuegoRepository.findAll();
     }
 
+    public List<Videojuego> buscarDestacadosDesdeLaBaseDeDatosConJPQL() {
+        return videojuegoRepository.buscarTodosConJPQL();
+    }
+
     public List<Videojuego> buscarDestacados() {
 
         List<Videojuego> destacados = new ArrayList<>();
