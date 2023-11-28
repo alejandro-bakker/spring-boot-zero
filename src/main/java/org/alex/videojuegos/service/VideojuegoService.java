@@ -10,24 +10,14 @@ import java.util.List;
 @Service
 public class VideojuegoService {
 
+    // Dependency injection
     private final VideojuegoRepository videojuegoRepository;
 
     public VideojuegoService(VideojuegoRepository videojuegoRepository) {
         this.videojuegoRepository = videojuegoRepository;
     }
 
-    public List<Videojuego> buscarDestacadosDesdeLaBaseDeDatos() {
-        return videojuegoRepository.findAll();
-    }
-
-    public List<Videojuego> buscarDestacadosDesdeLaBaseDeDatosConJPQL() {
-        return videojuegoRepository.buscarTodosConJPQL();
-    }
-
-    public List<Videojuego> servBuscarDestacadosPorDistribuidorIdConJPQL(int distribuidorId) {
-        return videojuegoRepository.buscarPorDistribuidorIdConJPQL(distribuidorId);
-    }
-
+    // Methods
     public List<Videojuego> buscarDestacados() {
 
         List<Videojuego> destacados = new ArrayList<>();
@@ -76,4 +66,25 @@ public class VideojuegoService {
 
         return destacados;
     }
+
+    // findAll
+    public List<Videojuego> buscarDestacadosDesdeLaBaseDeDatos() {
+        return videojuegoRepository.findAll();
+    }
+
+    // JPQL
+    public List<Videojuego> buscarDestacadosDesdeLaBaseDeDatosConJPQL() {
+        return videojuegoRepository.buscarTodosConJPQL();
+    }
+
+    // FindByDistribuidorId
+    public List<Videojuego> servBuscarDestacadosPorDistribuidorIdConJPQL(int distribuidorId) {
+        return videojuegoRepository.buscarPorDistribuidorIdConJPQL(distribuidorId);
+    }
+
+    // FindByNameContaining
+    public List<Videojuego> buscarPorNombre(String consulta) {
+        return videojuegoRepository.findVideojuegosByNameContaining(consulta);
+    }
+
 }

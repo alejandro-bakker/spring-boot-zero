@@ -5,6 +5,7 @@ import org.alex.videojuegos.service.VideojuegoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -40,6 +41,13 @@ public class ListadoController {
     public String listarVideojuegosPorDistribuidor(int distribuidorId, Model model) {
         List<Videojuego> videojuegosPorDistribuidor = videojuegoService.servBuscarDestacadosPorDistribuidorIdConJPQL(distribuidorId);
         model.addAttribute("videojuegosDestacados", videojuegosPorDistribuidor);
+        return "listado";
+    }
+
+    @RequestMapping("/buscar")
+    public String buscar(@RequestParam("q") String consulta, Model model) {
+        List<Videojuego> videojuegosEncontrados = videojuegoService.buscarPorNombre(consulta);
+        model.addAttribute("videojuegosDestacados", videojuegosEncontrados);
         return "listado";
     }
 

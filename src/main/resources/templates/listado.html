@@ -8,17 +8,20 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <!-- Custom -->
     <link href="css/videojuegos.css" rel="stylesheet">
 
 </head>
 <body>
 
-<!-- As a link -->
-<nav class="navbar">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Listado de Videojuegos</a>
-    </div>
+<nav class="navbar navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Listado de Videojuegos</a>
+    <form th:action="@{/buscar}" class="form-inline my-2 my-lg-0">
+        <input name="q" autofocus="autofocus" class="form-control mr-sm-2" type="search" th:placeholder="${param.q}"
+               aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
 </nav>
 
 <div class="container vj-destacados vertical-center mt-4">
@@ -28,7 +31,7 @@
                 <img th:src="${juegoDestacado.imageUrl}" class="card-img-top" alt="00">
                 <div class="card-body">
                     <h5 th:text="${juegoDestacado.name}" class="card-title"></h5>
-º                    <div><a th:href="@{/videojuego-por-distribuidor(distribuidorId=${juegoDestacado.distribuidor.id})}"
+                    <div><a th:href="@{/videojuego-por-distribuidor(distribuidorId=${juegoDestacado.distribuidor.id})}"
                             th:text="${juegoDestacado.distribuidor.name}" class="badge bg-warning"></a>
                         <div>
                             <p th:text="${juegoDestacado.description}" class="card-text"></p>
