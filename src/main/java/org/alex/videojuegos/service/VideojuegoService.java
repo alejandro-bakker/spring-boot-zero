@@ -24,6 +24,10 @@ public class VideojuegoService {
         return videojuegoRepository.buscarTodosConJPQL();
     }
 
+    public List<Videojuego> servBuscarDestacadosPorDistribuidorIdConJPQL(int distribuidorId) {
+        return videojuegoRepository.buscarPorDistribuidorIdConJPQL(distribuidorId);
+    }
+
     public List<Videojuego> buscarDestacados() {
 
         List<Videojuego> destacados = new ArrayList<>();

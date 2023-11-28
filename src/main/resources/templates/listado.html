@@ -28,7 +28,8 @@
                 <img th:src="${juegoDestacado.imageUrl}" class="card-img-top" alt="00">
                 <div class="card-body">
                     <h5 th:text="${juegoDestacado.name}" class="card-title"></h5>
-                    <div><span th:text="${juegoDestacado.distribuidor.name}" class="badge bg-warning"></span>
+º                    <div><a th:href="@{/videojuego-por-distribuidor(distribuidorId=${juegoDestacado.distribuidor.id})}"
+                            th:text="${juegoDestacado.distribuidor.name}" class="badge bg-warning"></a>
                         <div>
                             <p th:text="${juegoDestacado.description}" class="card-text"></p>
                             <a href="#" class="btn btn-primary">ver detalle</a>

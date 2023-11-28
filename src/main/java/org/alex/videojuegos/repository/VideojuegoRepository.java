@@ -13,4 +13,7 @@ public interface VideojuegoRepository extends JpaRepository<Videojuego, Integer>
     @Query("from Videojuego v order by v.name DESC LIMIT 5")
     List<Videojuego> buscarTodosConJPQL();
 
+    @Query("from Videojuego v where v.distribuidor.id = ?1 order by v.name DESC LIMIT 7")
+    List<Videojuego> buscarPorDistribuidorIdConJPQL(int distribuidorId);
+
 }

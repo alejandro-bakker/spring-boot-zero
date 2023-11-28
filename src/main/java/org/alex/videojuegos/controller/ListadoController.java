@@ -23,10 +23,24 @@ public class ListadoController {
         // Static list
         // List<Videojuego> destacados = videojuegoService.buscarDestacados();
 
-        // Dynamic list
-        List<Videojuego> destacados = videojuegoService.buscarDestacadosDesdeLaBaseDeDatosConJPQL();
+        // Dynamic list: All
+        List<Videojuego> destacados = videojuegoService.buscarDestacadosDesdeLaBaseDeDatos();
+
+        // Dynamic list: All ordered
+        // List<Videojuego> destacados = videojuegoService.buscarDestacadosDesdeLaBaseDeDatosConJPQL();
+
+        // Dynamic list: By DistributorId
+        // List<Videojuego> destacados = videojuegoService.servBuscarDestacadosPorDistribuidorIdConJPQL(1);
 
         model.addAttribute("videojuegosDestacados", destacados);
         return "listado";
     }
+
+    @RequestMapping("/videojuego-por-distribuidor")
+    public String listarVideojuegosPorDistribuidor(int distribuidorId, Model model) {
+        List<Videojuego> videojuegosPorDistribuidor = videojuegoService.servBuscarDestacadosPorDistribuidorIdConJPQL(distribuidorId);
+        model.addAttribute("videojuegosDestacados", videojuegosPorDistribuidor);
+        return "listado";
+    }
+
 }
