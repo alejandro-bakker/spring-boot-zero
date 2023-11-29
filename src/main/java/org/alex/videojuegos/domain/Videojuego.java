@@ -11,7 +11,7 @@ import org.alex.videojuegos.domain.Distribuidor;
 @Table(name = "videojuego")
 public class Videojuego {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String description;
